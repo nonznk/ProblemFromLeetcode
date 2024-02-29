@@ -21,4 +21,5 @@ for j in range(len(text_sep)):
 
 new_text = '"' + new_text + '"'
 
-print("Output: {}".format(new_text))
+# print("Output: {}".format(new_text))
+print(new_text)
