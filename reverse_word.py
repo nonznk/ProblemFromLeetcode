@@ -12,10 +12,13 @@ text_sep = new_string.split(" ")
 new_text = ""
 
 for j in range(len(text_sep)):
+    num = len(text_sep)
     for k in range(len(text_sep[j]) - 1, -1, -1):
         new_text = new_text + text_sep[j][k]
-    new_text = new_text + " "
+
+    if j < num - 1:
+        new_text = new_text + " "
 
 new_text = '"' + new_text + '"'
 
-print(new_text)
+print("Output: {}".format(new_text))
