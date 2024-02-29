@@ -32,6 +32,6 @@ class Solution:
         return self.new_text
 
 
-a = Solution()
-a.reverseWords(s)
-print(a)
+Solution().reverseWords(s)
+# a.reverseWords(s)
+# print(a)
