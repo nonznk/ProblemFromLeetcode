@@ -2,20 +2,20 @@ class Solution:
     def addtwoNumbers(self, l1, l2):
         self.l1 = l1
         self.l2 = l2
-
-        new_l1 = ''
-        new_l2 = ''
         result = []
+
+        self.l1.reverse()
+        self.l2.reverse()
         
-        for i in range(-1, -len(self.l1)-1, -1):
-            new_l1 = new_l1 + str(self.l1[i])
-        for j in range(-1, -len(self.l2)-1, -1):
-            new_l2 = new_l2 + str(self.l2[j])
+        for i, j in zip(self.l1, self.l2):
+            result.append(i + j) # [7, 10, 7]
 
-        val = int(new_l1) + int(new_l2)
-
-        for k in range(-1, -len(str(val))-1, -1):
-            result.append(int(str(val)[k]))
+        for k in range(len(result)):
+            if result[k] >= 10:
+                result[k] = result[k] - 10
+                result[k-1] = result[k-1] + 1
+        
+        result.reverse()
 
         # print(result)
 
