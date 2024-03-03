@@ -43,9 +43,12 @@ def romanizer(numbers):
                 new_roman = roman_num[50]
                 # converted.append(new_roman)
             elif num > 50 and num < 90:
-                two_bit = (num - 50) // 10
-                one_bit = num % 10
-                new_roman = roman_num[50] + two_bit * roman_num[10] + roman_num[one_bit]
+                two_bit = roman_num[50] + ((num - 50) // 10) * roman_num[10]
+                if num % 10 == 0:
+                    one_bit = ""
+                else:
+                    one_bit = roman_num[num % 10]
+                new_roman = two_bit + one_bit
                 # converted.append(new_roman)
             elif num == 90:
                 new_roman = roman_num[90]
@@ -93,4 +96,4 @@ def romanizer(numbers):
     return converted
 
 
-print(romanizer([1, 61, 561]))
+print(romanizer([1, 60, 561]))
